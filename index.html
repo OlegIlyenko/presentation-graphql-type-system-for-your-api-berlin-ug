@@ -49,6 +49,14 @@
 	<body>
     <div id="credit" style="display: none"></div>
 
+    <a href="https://graphql-europe.org">
+      <img id="graphql-europe" style="display: none" src="assets/img/graphql-europe.svg">
+    </a>
+
+    <a href="https://graphql-europe.org#diversity">
+      <img id="diversity" style="display: none" src="assets/img/diversity.svg">
+    </a>
+
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
@@ -65,6 +73,12 @@
             by Oleg Ilyenko / <a href="https://twitter.com/easyangel">@easyangel</a>
           </p>
 				</section>
+
+        <section>
+          <h2>Wouldn't it be great if...</h2>
+          <pre><code class="graphiql javascript" data-trim contenteditable>
+          </code></pre>
+        </section>
 
         <section>
           <h2>Typical Rest API</h2>
@@ -249,6 +263,42 @@ query MyProduct {
 
         <section>
           <img src="assets/img/data-requirements.svg">
+        </section>
+
+        <section>
+          <h2>GraphQL is <strong>NOT</strong></h2>
+
+          <ul>
+            <li>
+              Database API
+
+              <ul>
+                <li class="fragment fade-in" data-fragment-index="1">Not SQL</li>
+                <li class="fragment fade-in" data-fragment-index="2">Does not require specific storage</li>
+              </ul>
+            </li>
+            <li class="fragment fade-in" data-fragment-index="3">
+              Serialization format
+
+              <ul>
+                <li  class="fragment fade-in" data-fragment-index="4">works with JSON and similar formats</li>
+              </ul>
+            </li>
+            <li class="fragment fade-in" data-fragment-index="5">
+              Transport protocol
+
+              <ul class="fragment fade-in" data-fragment-index="6">
+                <li>Most often used with HTTP</li>
+                <li>Can be used with TCP, UDP, etc.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Backend Agnostic</h2>
+
+          <img src="assets/img/app-layers.svg">
         </section>
 
         <section data-background="#dc7676" class="first-slide">
@@ -512,15 +562,17 @@ val result: Future[Json] =
           </ul>
         </section>
 
+        <section class="graphql-europe-slide"></section>
+        <section class="diversity-slide"></section>
+
         <section data-background="assets/img/grad1.svg" class="first-slide">
           <h1>Thank you!</h1>
           <br>
           <ul class="fragment roll-in" data-fragment-index="2">
-            <li><a href="http://bit.ly/graphql-typesystem" target="_blank">http://bit.ly/graphql-typesystem</a></li>
+            <li><a href="http://bit.ly/graphql-typesystem" target="_blank">http://bit.ly/graphql-typesystem-berlin</a></li>
             <li><strong class="super-strong">GraphQL:</strong> <a href="http://graphql.org" target="_blank">http://graphql.org</a></li>
             <li><strong class="super-strong">Sangria:</strong> <a href="http://sangria-graphql.org" target="_blank">http://sangria-graphql.org</a></li>
-            <li><strong class="super-strong">Playground:</strong> <a href="http://try.sangria-graphql.org" target="_blank">http://try.sangria-graphql.org</a></li>
-            <li><strong class="super-strong">Akka-http Example:</strong> <a href="http://bit.ly/sangria-akka-http" target="_blank">http://bit.ly/sangria-akka-http</a></li>
+            <li><strong class="super-strong">GraphQL-Europe:</strong> <a href="https://graphql-europe.org" target="_blank">https://graphql-europe.org</a></li>
             <li><strong class="super-strong">Twitter:</strong> <a href="https://twitter.com/easyangel" target="_blank">https://twitter.com/easyangel</a></li>
           </ul>
           <br><br>

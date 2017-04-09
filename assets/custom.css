@@ -165,3 +165,8 @@ iframe.graphiql {
 .pause-overlay {
   background: white !important;
 }
+
+#graphql-europe, #diversity {
+  width: 100%;
+  height: 100%;
+}

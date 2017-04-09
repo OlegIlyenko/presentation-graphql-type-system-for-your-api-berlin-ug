@@ -44,16 +44,43 @@ $(function() {
       var replaceElem = $(elem).parent().get(0)
       var vars = $(elem).data("vars")
       var varsParam = vars ? "variables=" +encodeURIComponent(vars) : "hideVariables=true"
-      var queryAndResp = $(elem).text().trim().split("// Response")
-      var query = queryAndResp[0].trim()
-      var resp = queryAndResp[1].trim()
+
+      var query = null
+      var resp = null
+
+      if ($(elem).text().trim() != "") {
+        var queryAndResp = $(elem).text().trim().split("// Response")
+        query = queryAndResp[0].trim()
+        resp = queryAndResp[1].trim()
+      }
 
 
-      $('<iframe src="' + graphiqlUrl + '?zoom=' + graphiqlZoom + '&query=' + encodeURIComponent(query) + '&response=' + encodeURIComponent(resp) + '&' + varsParam + '" class="graphiql">').insertAfter(replaceElem)
+      $('<iframe src="' + graphiqlUrl +
+        '?zoom=' + graphiqlZoom +
+        '&query=' + (query ? encodeURIComponent(query) : '') +
+        '&response=' + (resp ? encodeURIComponent(resp) : '') +
+        '&' + varsParam + '" class="graphiql">').insertAfter(replaceElem)
 
       replaceElem.remove()
     })
+  }              
+
+  var showGQLE = function (event) {
+    if(event.currentSlide.className.indexOf("graphql-europe-slide") > -1) {
+      $('#graphql-europe').fadeIn(1000);
+    } else {
+      $('#graphql-europe').fadeOut(300);
+    }
+
+    if(event.currentSlide.className.indexOf("diversity-slide") > -1) {
+      $('#diversity').fadeIn(1000);
+    } else {
+      $('#diversity').fadeOut(300);
+    }
   }
+
+  Reveal.addEventListener('slidechanged', showGQLE)
+  Reveal.addEventListener('ready', showGQLE)
 
   initGraphiQL($("pre code.graphiql"))
 })
